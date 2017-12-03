@@ -1,35 +1,19 @@
-var path = require("path");
+"use strict";
+
+const {resolve} = require("path");
+const extension = resolve(__dirname, "..");
 
 exports.config = {
-    port: '9515',
-    path: '/',
-    specs: [
-        './test/*.spec.js'
-    ],
+  path: "/",
+  port: 9515,
 
-    capabilities: [{
-        browserName: 'chrome',
-        chromeOptions: {
-            args: ["--load-extension=" + path.resolve(__dirname, "../example")],
-        }
-    }],
+  services: ["chromedriver"],
+  capabilities: [{
+    chromeOptions: {
+      args: [`--load-extension=${extension}`],
+    }
+  }],
 
-    sync: true,
-    logLevel: 'verbose',
-    coloredLogs: true,
-
-    baseUrl: 'http://webdriver.io',
-
-    waitforTimeout: 60000,
-    connectionRetryTimeout: 90000,
-    connectionRetryCount: 3,
-
-    framework: 'mocha',
-    mochaOpts: {
-        timeout: 90000,
-        ui: 'bdd'
-    },
-
-    services: ['chromedriver'],
-    chromeDriverLogs: './'
+  logLevel: "verbose",
+  specs: ["./test/test-*.js"],
 }

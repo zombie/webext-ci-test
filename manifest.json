@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "version": "1.1",
+  "name": "blind-reviews",
+  "description": "Blind Reviews Experiment",
+  "homepage_url": "https://github.com/zombie/blind-reviews/",
+
+  "applications": {
+    "gecko": {
+      "id": "blind-reviews@allizom.org"
+    }
+  },
+
+  "icons": {
+    "96": "icon.png"
+  },
+
+  "permissions": ["storage"],
+
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "run_at": "document_start",
+      "css": ["github/blind.css"],
+      "js": ["github/common.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "icon.png"
+  ]
+}
