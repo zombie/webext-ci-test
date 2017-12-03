@@ -1,0 +1,13 @@
+{
+  "name": "webext-ci-test",
+  "version": "0.2.2",
+  "description": "webext ci test",
+  "scripts": {
+    "test": "wdio test/wdio.conf.js"
+  },
+  "devDependencies": {
+    "wdio-chromedriver-service": "^0.1.1",
+    "wdio-mocha-framework": "^0.2.12",
+    "webdriverio": "^4.0.7"
+  }
+}

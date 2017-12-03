@@ -1,0 +1,11 @@
+body > div {
+  color: red !important;
+}
+
+body.green > div {
+  color: green !important;
+}
+
+body.blue > div {
+  color: blue !important;
+}
