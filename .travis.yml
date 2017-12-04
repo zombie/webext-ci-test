@@ -9,4 +9,4 @@ before_script:
   - sleep 3
 
 notifications:
-  irc: "chat.freenode.net#blindreviews"
+  irc: "irc.mozilla.org#bugmark"
