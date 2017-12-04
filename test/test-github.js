@@ -8,8 +8,8 @@ function screenshot() {
   console.log("data:image/png;base64," + buff.toString("base64"));
 }
 
-describe("webdriverio", function () {
-  it("should run a test", function () {
+describe("PR Listings", function () {
+  it("should redact the author", function () {
     browser.url("https://github.com/login");
     screenshot();
 
@@ -17,7 +17,8 @@ describe("webdriverio", function () {
     browser.url("https://github.com/pulls/mentioned");
     screenshot();
 
-//    assert.equal(browser.getTitle(), "Example Domain");
+    const pr1 = $(".opened-by").getText();
+    assert.ok(pr1.match(/^#1 opened \d+ days ago by$/), pr1);
     browser.executeAsync(done => setTimeout(done, 1000));
   });
 });
