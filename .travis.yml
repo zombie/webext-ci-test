@@ -9,8 +9,4 @@ before_script:
   - sleep 3
 
 notifications:
-  irc:
-    channels:
-      - "chat.freenode.net#blindreviews"
-    skip_join: true
-
+  irc: "chat.freenode.net#blindreviews"
